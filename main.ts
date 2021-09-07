@@ -1,28 +1,31 @@
-input.onButtonPressed(Button.A, function () {
+input.onButtonPressed(Button.A, function on_button_pressed_a() {
     if (player_car.get(LedSpriteProperty.X) < 4) {
         player_car.change(LedSpriteProperty.X, -1)
     }
+    
 })
-input.onButtonPressed(Button.B, function () {
+input.onButtonPressed(Button.B, function on_button_pressed_b() {
     if (player_car.get(LedSpriteProperty.X) < 4) {
         player_car.change(LedSpriteProperty.X, 1)
     }
+    
 })
-let car_4: game.LedSprite = null
-let car_3: game.LedSprite = null
-let car_2: game.LedSprite = null
-let car_1: game.LedSprite = null
-let car: game.LedSprite = null
+let car_4 : game.LedSprite = null
+let car_3 : game.LedSprite = null
+let car_2 : game.LedSprite = null
+let car_1 : game.LedSprite = null
+let car : game.LedSprite = null
 let game_On = false
 let score = 0
-let player_car: game.LedSprite = null
+let player_car : game.LedSprite = null
 bluetooth.startAccelerometerService()
 bluetooth.startButtonService()
 bluetooth.startIOPinService()
 bluetooth.startLEDService()
 bluetooth.startTemperatureService()
 bluetooth.startMagnetometerService()
-basic.forever(function () {
+basic.forever(function on_forever() {
+    
     score = 0
     player_car = game.createSprite(2, 4)
     game_On = true
@@ -33,7 +36,8 @@ basic.forever(function () {
     game.gameOver()
     basic.pause(5000)
 })
-basic.forever(function () {
+basic.forever(function on_forever2() {
+    
     basic.pause(100)
     if (game_On == true) {
         music.startMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.ForeverInBackground)
@@ -50,14 +54,18 @@ basic.forever(function () {
                     car.set(LedSpriteProperty.Y, 0)
                     basic.pause(randint(0, 5000))
                 }
+                
             } else {
                 car.change(LedSpriteProperty.Y, 1)
                 basic.pause(500)
             }
+            
         }
     }
+    
 })
-basic.forever(function () {
+basic.forever(function on_forever3() {
+    
     basic.pause(100)
     if (game_On == true) {
         music.startMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.ForeverInBackground)
@@ -73,14 +81,18 @@ basic.forever(function () {
                     car_1.set(LedSpriteProperty.Y, 0)
                     basic.pause(randint(0, 5000))
                 }
+                
             } else {
                 car_1.change(LedSpriteProperty.Y, 1)
                 basic.pause(500)
             }
+            
         }
     }
+    
 })
-basic.forever(function () {
+basic.forever(function on_forever4() {
+    
     basic.pause(100)
     if (game_On == true) {
         music.startMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.ForeverInBackground)
@@ -96,14 +108,18 @@ basic.forever(function () {
                     car_2.set(LedSpriteProperty.Y, 0)
                     basic.pause(randint(0, 5000))
                 }
+                
             } else {
                 car_2.change(LedSpriteProperty.Y, 1)
                 basic.pause(500)
             }
+            
         }
     }
+    
 })
-basic.forever(function () {
+basic.forever(function on_forever5() {
+    
     basic.pause(100)
     if (game_On == true) {
         music.startMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.ForeverInBackground)
@@ -119,14 +135,18 @@ basic.forever(function () {
                     car_3.set(LedSpriteProperty.Y, 0)
                     basic.pause(randint(0, 5000))
                 }
+                
             } else {
                 car_3.change(LedSpriteProperty.Y, 1)
                 basic.pause(500)
             }
+            
         }
     }
+    
 })
-basic.forever(function () {
+basic.forever(function on_forever6() {
+    
     basic.pause(100)
     if (game_On == true) {
         music.startMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.ForeverInBackground)
@@ -142,10 +162,13 @@ basic.forever(function () {
                     car_4.set(LedSpriteProperty.Y, 0)
                     basic.pause(randint(0, 5000))
                 }
+                
             } else {
                 car_4.change(LedSpriteProperty.Y, 1)
                 basic.pause(500)
             }
+            
         }
     }
+    
 })
